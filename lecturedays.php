@@ -18,12 +18,6 @@
    		print(");\n");	
   }
 
-//   var_dump($obj);
-
-//  $date = $obj->{'date'}; 
-
-//    echo "$year $month $day \n"; 
-
 ?>
 
 
