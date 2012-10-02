@@ -92,24 +92,19 @@ $day= array(
 	'2013/01/18'
 	)
 );
+print("Subject,Start Date,Start Time,End Date,End Time,All Day Event,Description,Location<br>");
 
 foreach($wday as $eachday){
 	$iday=1;
 	for($i=1; $i<7; $i++){
-		print( $eachday.$i.'=');
+		// print( $eachday.$i.'=');
 		$subject = htmlspecialchars( $_REQUEST[ $eachday.$i], ENT_QUOTES );
-		print( $subject.'<br>' );
-		if(empty($subject)){
-			print('empty<br>');
+		// print( $subject.'<br>' );
+		if(empty($subject))
 			continue;
+		foreach($day[$eachday] as $lecdate){
+			print( $subject.','.$lecdate.','.$timetable[$i-1][0].','.$lecdate.','.$timetable[$i-1][1].',,,'.'SFC'.'<br>' );
 		}
-		print('not empty<br>');
-		/*
-		print( $subject.','.$day[$eachday][$i-1].','.$timetable[$i-1][0].','.$day[$eachday][$i-1].','.$timetable[$i-1][0].','.'SFC'.'<br>'' );
-		*/
 	}
 }
-
-print(htmlspecialchars( $_REQUEST[ 'm1'], ENT_QUOTES ).','.$day[0][0].','.$timetable[0][0].','.$day[0][1].','.$timetable[0][1].','.'教室'.'<br>');
-
 ?>
